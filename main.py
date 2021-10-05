@@ -38,9 +38,6 @@ def main():
     driver.get(targetURL)
     driver.find_element_by_id('noTradeIn_label').click()
     try:
-        # driver.find_element_by_class_name(
-        #     'rc-prices-fullprice').is_displayed()  # rf-pickup-quote-storelink
-
         WebDriverWait(driver, 10, 0.5).until(
             # 條件：直到元素載入完成
             lambda x: x.find_element_by_class_name(
