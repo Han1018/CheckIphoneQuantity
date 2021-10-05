@@ -8,6 +8,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+targetURL = "https://www.apple.com/tw/shop/buy-iphone/iphone-13-pro/6.1-%E5%90%8B%E9%A1%AF%E7%A4%BA%E5%99%A8-256gb-%E9%8A%80%E8%89%B2"
+lineToken = "ef1AXvgyTCpTakegmVsxSlgQ2fwpovtgVzpEFx3hjzb"
+
 
 def set_interval(func, sec):
     def func_wrapper():
@@ -32,7 +35,7 @@ def main():
                                     "profile.password_manager_enabled": False, "credentials_enable_service": False})
 
     driver = webdriver.Chrome(options=options)
-    driver.get("https://www.apple.com/tw/shop/buy-iphone/iphone-13-pro/6.1-%E5%90%8B%E9%A1%AF%E7%A4%BA%E5%99%A8-256gb-%E9%8A%80%E8%89%B2")
+    driver.get(targetURL)
     driver.find_element_by_id('noTradeIn_label').click()
     try:
         # driver.find_element_by_class_name(
@@ -59,7 +62,7 @@ def main():
 
 def notify(text):
     headers = {
-        "Authorization": "Bearer " + "ef1AXvgyTCpTakegmVsxSlgQ2fwpovtgVzpEFx3hjzb",
+        "Authorization": "Bearer " + lineToken,
         "Content-Type": "application/x-www-form-urlencoded"
     }
 
