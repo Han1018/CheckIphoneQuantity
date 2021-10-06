@@ -50,6 +50,7 @@ def main():
             print(text)
             driver.close()
         else:
+            print("iphone13 Pro 銀色"+text)
             notify("iphone13 Pro 銀色"+text)
             driver.close()
     except ValueError:
